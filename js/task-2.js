@@ -1,10 +1,11 @@
 function calcAverageCalories(days) {
-  let totalProducts = 0;
+  let totalCalories = 0;
 
-  for (const day in days) {
-    totalProducts += days[day];
+  for (const day of days) {
+    totalCalories += day.calories;
   }
-  return totalProducts <= containerSize;
+
+  return totalCalories / days.length;
 }
 
 console.log(
@@ -17,7 +18,7 @@ console.log(
     { day: "saturday", calories: 3280 },
     { day: "sunday", calories: 3300 },
   ])
-); // 3180
+);
 
 console.log(
   calcAverageCalories([
